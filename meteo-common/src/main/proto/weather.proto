@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package io.kantenburg.meteo_common;
+
+option java_multiple_files = true;
+option java_package = "io.kantenburg.meteo_common";
+option java_outer_classname = "WeatherProto";
+
+service MeteoTemperatureService {
+  rpc GetWeatherByCity(City) returns (WeatherReport);
+  rpc GetWeatherByCoordinates(Coordinates) returns (WeatherReport);
+}
+
+message City {
+  string cityName = 1;
+}
+
+message Coordinates {
+  double latitude = 1;
+  double longitude = 2;
+}
+
+message WeatherReport {
+  Coordinates coordinates = 1;
+  Main main = 2;
+  uint64 Visibility = 3;
+  Wind wind = 4;
+  Sys sys = 5;
+  uint64 timezone = 6;
+  uint64 id = 7;
+  string name = 8;
+  uint64 cod = 9;
+  string base = 10;
+}
+
+message Main {
+  double temp = 1;
+  double feelsLike = 2;
+  double tempMin = 3;
+  double tempMax = 4;
+  uint64 pressure = 5;
+  uint64 humidity = 6;
+}
+
+message Wind {
+  double speed = 1;
+  uint64 deg = 10;
+}
+
+message Cloud {
+  uint64 all = 1;
+}
+
+message Sys {
+  uint64 type = 1;
+  uint64 id = 2;
+  string country = 3;
+  uint64 sunrise = 4;
+  uint64 sunset = 5;
+}

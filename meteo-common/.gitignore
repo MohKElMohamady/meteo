@@ -1,0 +1,5 @@
+### Compiled Classes ###
+.classpath
+.project
+.settings/
+target/
