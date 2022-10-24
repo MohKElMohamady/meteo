@@ -1,6 +1,6 @@
 type Query {
     weatherReportByCity(city: String): WeatherReport
-    weatherReportByByLongitudeAndLatitude(longitude: Float, latitude : Float): WeatherReport
+    weatherReportByLongitudeAndLatitude(longitude: Float, latitude : Float): WeatherReport
 }
 
 
