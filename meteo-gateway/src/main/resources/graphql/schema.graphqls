@@ -1,0 +1,54 @@
+type Query {
+    weatherReportByCity(city: String): WeatherReport
+    weatherReportByByLongitudeAndLatitude(longitude: Float, latitude : Float): WeatherReport
+}
+
+
+type WeatherReport{
+    weatherReportId : String
+    coordinates : Coordinates
+    main : Main
+    wind : Wind
+    sys :  Sys
+    id : Float
+    name : String
+    cod : Float
+}
+
+type Wind {
+    windCaptureId : String
+    weatherReport : WeatherReport
+    speed : Float
+    deg : Int
+}
+
+type Sys {
+    sysCaptureId : String
+    type : Int
+    id : Int
+    country : String
+    sunrise : Int
+    sunset : Int
+}
+
+type Main {
+    temperatureCaptureId : String
+    temperature : Float
+    feelsLike : Float
+    tempMin : Float
+    tempMax : Float
+    pressure : Int
+    humidity: Int
+}
+
+type Coordinates {
+    latitude : Float
+    longitude : Float
+}
+
+type Cloud {
+    cloudId : String
+    weatherReport : WeatherReport
+    allall : Int
+}
+
