@@ -1,0 +1,7 @@
+### properties ###
+src/main/resources/application.yaml
+### Compiled Classes ###
+.classpath
+.project
+.settings/
+target/
